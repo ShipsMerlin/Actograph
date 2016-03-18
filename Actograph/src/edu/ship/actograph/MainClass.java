@@ -2,6 +2,7 @@ package edu.ship.actograph;
 
 import java.io.IOException;
 
+import edu.ship.actograph.view.ActographController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -31,6 +32,9 @@ public class MainClass extends Application
 	            FXMLLoader loader = new FXMLLoader();
 	            loader.setLocation(MainClass.class.getResource("view/ActographOverview.fxml"));
 	            AnchorPane actographOverview = (AnchorPane) loader.load();
+
+	            ActographController controller = loader.getController();
+	            controller.setMainApp(this);
 
 	            // Set person overview into the center of root layout.
 	            rootLayout.setCenter(actographOverview);
